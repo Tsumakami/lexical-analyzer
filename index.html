@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Analisador Léxico
+    </title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+</head>
+<body>
+    <header class="navbar bg-primary">
+        <nav>
+            <div class="nav-wrapper z-depth-3">
+                <a href="#" class="brand-logo margin-left-default">Analisador Léxico</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="javascript:lexicalController.clear();">Limpar Analisador</a></li>
+                </ul>
+            </div>
+        </nav>
+	</header>
+    <main>
+        <div class="container margin-top-default">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card hoverable padding-default">
+                        <span class="card-title margin-left-default" style="padding-top: 20px;">
+                            <i class="material-icons">create</i>
+                            Adicione aqui suas palavras
+                        </span>
+                        <div class="card-content">
+                            <div class="chips chips-placeholder" id="chips"></div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn waves-effect waves-light" type="submit" onclick="lexicalController.updateTable();" id="update-table" name="action">Preencher Tabela
+                                <i class="material-icons right">send</i>
+                            </button>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card hoverable padding-default">
+                        <span class="card-title margin-left-default" style="padding-top: 20px;">
+                            <i class="material-icons">spellcheck</i>
+                            Valida palavra
+                        </span>
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="word" type="text">
+                                    <label for="word">Digite uma palavra</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card hoverable padding-default">
+                        <span class="card-title margin-left-default" style="padding-top: 20px;">
+                            <i class="material-icons">table_view</i>
+                            Tabela de estados
+                        </span>
+                        <div class="card-content">
+                            <table class="table responsive-table striped" id="lexical-table">
+								<thead>
+						          <tr>
+									<th >&delta;</th>
+									<th >A</th>
+									<th >B</th>
+									<th >C</th>
+									<th >D</th>
+									<th >E</th>
+									<th >F</th>
+									<th >G</th>
+									<th >H</th>
+									<th >I</th>
+									<th >J</th>
+									<th >K</th>
+									<th >L</th>
+									<th >M</th>
+									<th >N</th>
+									<th >O</th>
+									<th >P</th>
+									<th >Q</th>
+									<th >R</th>
+									<th >S</th>
+									<th >T</th>
+									<th >U</th>
+									<th >V</th>
+									<th >W</th>
+									<th >X</th>
+									<th >Y</th>
+									<th >Z</th>
+						          </tr>
+						        </thead>
+						        <tbody class="scale-transition"></tbody>
+							</table>
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="Controllers/lexicalController.js"></script>
+<script src="Controllers/chipsController.js"></script>
+<script>
+    const lexicalController = new LexicalController();
+    lexicalController.init();
+
+</script>
+</html>
