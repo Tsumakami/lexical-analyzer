@@ -17,6 +17,9 @@ nav {
 	background-color: #26a69a!important;
 	color: white!important;
 }
+th{
+	text-align: center!important;
+}
 
 .focus-line td,
 .focus-column{
